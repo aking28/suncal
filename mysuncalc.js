@@ -22,6 +22,9 @@ class MyCalc {
       lat: options.lat,
       city: options.city
     })
+
+    let data = SunCalc.getTimes(new Date(), options.lat, options.lon )
+    console.log(data)
   }
 
   sunset(options) {
@@ -30,6 +33,10 @@ class MyCalc {
       lat: options.lat,
       city: options.city
     })
+
+   // let data = SunCalc.getTimes(new Date(), options.lat, options.lon, options.city)
+   // console.log(data)
+
   }
 
 }
