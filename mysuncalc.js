@@ -5,35 +5,30 @@ let moment = require('moment')
 class MyCalc {
   constructor() {}
 
-  sunrise(options) {
-    console.log({
-      lon: options.lon,
-      lat: options.lat,
-      city: options.city
-
-    })
-
-    let data = SunCalc.getTimes(new Date(), options.lat, options.lon)
-    console.log(data)
-
-    let sunrise = moment(data.sunrise).format('MMMM Do YYYY, h:mm:ss a');
-    console.log(sunrise)
-
-  }
-
   sunset(options) {
     console.log({
       lon: options.lon,
-      lat: options.lat,
-      city: options.city
+      lat: options.lat
+
     })
 
     let data = SunCalc.getTimes(new Date(), options.lat, options.lon)
-    console.log(data)
-         
 
-    let sunset = moment(data.sunset).format('MMMM Do YYYY, h:mm:ss a');
+    let sunset = moment(data.sunset).format('MMMM Do YYYY, h:mm:ss A');
     console.log(sunset)
+
+  }
+
+  sunrise(options) {
+    console.log({
+      lon: options.lon,
+      lat: options.lat
+    })
+
+    let data = SunCalc.getTimes(new Date(), options.lat, options.lon)
+         
+    let sunrise = moment(data.sunrise).format('MMMM Do YYYY, h:mm:ss A');
+    console.log(sunrise)
 
   }
 
